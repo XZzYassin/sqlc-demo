@@ -1,1 +1,1 @@
-# code
+# sqlc demo
