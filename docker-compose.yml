@@ -1,0 +1,16 @@
+version: "3.4"
+services:
+  postgres:
+    image: postgres:14.3-alpine3.15
+    volumes:
+      - "postgres-test-data:/var/lib/postgresql/data"
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_USER: postgres
+      POSTGRES_DB: test-db
+    ports:
+      - "5432:5432"
+    stop_signal: SIGKILL
+
+volumes:
+  postgres-test-data:
